@@ -50,7 +50,9 @@ const newArr2 = arr2.filter((num)=>(
 ))
 
 console.log(newArr2)
+
 //------------------------------------------------------------------------------------------------------------------------------------
+
 // Same Example with a RETURN statement using {}
 
 let arr3 = [2,5,16,14,23]
