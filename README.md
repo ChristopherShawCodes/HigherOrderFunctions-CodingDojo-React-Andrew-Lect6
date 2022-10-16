@@ -3,6 +3,7 @@
 // #2 Remove all of the ODD NUMBERS with Filter
 
 // #1-MAP------------------------------------------------
+
 let arr1 = [2,5,16,14,23]
 
 let newArr = []
