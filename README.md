@@ -1,70 +1,86 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+// #1 Remove all of the ODD NUMBERS with MAP
+// #2 Remove all of the ODD NUMBERS with Filter
 
-## Available Scripts
+// #1-MAP------------------------------------------------
+let arr1 = [2,5,16,14,23]
 
-In the project directory, you can run:
+let newArr = []
+for(let i=0; i<arr1.length; i++){
+    //is this number even?
+    if (arr1[i] % 2  == 0){
+        // great, add it to the new array
+        newArr.push(arr1[i])
+    }
+}
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+console.log(newArr)
+//results [2,16,14]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+//-------------------------------------------------------------------------------------
+// Modulo: 
+// Divide the number on the left by the
+// number on the right , result is the remainder.
 
-### `npm test`
+//Filter Even: 
+    // if (arr1[i] % 2  == 0)
+//Filter Odd:
+    // if (arr1[i] % 23 == 0)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// EXAMPLES:
+// 10 % 3 = 1
+// 10 % 2 = 0
 
-### `npm run build`
+// 1. 10/3 = 3 with a remainder of 1 so the result is 1
+// 2. 10/2 = 0 10 can be divided evenly by 2 with NO REMAINDER so the result is 0
+//-------------------------------------------------------------------------------------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// #2-FILTER------------------------------------------------
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+let arr2 = [2,5,16,14,23]
+//using () instead of {} so no RETURN statement is needed
+const newArr2 = arr2.filter((num)=>(
+    num % 2 == 0
+))
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+console.log(newArr2)
+//-----------------------------------------------------------------
+// Same Example with a RETURN statement using {}
 
-### `npm run eject`
+let arr3 = [2,5,16,14,23]
+const newArr3 = arr3.filter((num)=>{
+    return num % 2 == 0
+})
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+console.log(newArr3)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+//---------------------------------------------------------------------------------------------------------------------------------------
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+//Task: Add all of the numbers in an array and return the SUM
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+let arr1 = [2,5,16,14,23]
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+let sum = 0
+for(let i=0; i<arr1.length; i++){
+    sum += arr1[i]
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+console.log(sum)
+//returns 60 the sum of 2+5+16+14+23 from the array
 
-### Code Splitting
+//--------------------------------------------------
+// Same Task Using Reduce/ useReducer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+let arr2 = [2,5,16,14,23]
 
-### Analyzing the Bundle Size
+// First Argument is an accumulator. A variable that accumulates. Much like a SUM.
+// Second Argument is for VALUE, in this case we are using NUM
+const sum2 = arr2.reduce((acc,num)=>(
+    acc + num
+))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+console.log(sum2)
+//returns 60 the sum of 2+5+16+14+23 from the array
+//-----------------------------------------------------
